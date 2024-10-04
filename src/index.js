@@ -13,7 +13,7 @@ bot.on('message', async (ctx) => {
         const weatherData = response.data;
         const temp = (weatherData.main.temp - 273.15).toFixed(2);
         const weatherDescription = weatherData.weather[0].description;
-        ctx.reply(`Текущая температура: ${temp}°C\nПогодные условия: ${weatherDescription}`);
+        ctx.reply(`Текущая температура: ${temp}°C\nПогодные условия: ${weatherDescription}\nМестоположение: ${weatherData.name}`);
     } else {
         ctx.reply('Пожалуйста отправьте свою геопозицию чтобы я мог узнать погоду');
         console.log(ctx.message);
