@@ -1,7 +1,8 @@
-const { Telegraf } = require('telegraf')
+const { Telegraf } = require('telegraf');
 const axios = require('axios');
+require('dotenv').config();
 
-const bot = new Telegraf('7385744401:AAER1duO2BivsffNWNxxSEBUNTtzzGXjgsI')
+const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.on('message', async (ctx) => {
     if (ctx.message.location) {
